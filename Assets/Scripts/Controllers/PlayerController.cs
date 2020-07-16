@@ -7,12 +7,12 @@ public class PlayerController : MonoBehaviour
     public float Speed;
     private Rigidbody2D rigidBody;
     private Vector2 moveAmount;
-    private Animator aminator;
+    private Animator animator;
     // Start is called before the first frame update
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
-        aminator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -24,11 +24,11 @@ public class PlayerController : MonoBehaviour
         //Changing the MotionState on Key held down
         if (moveInput != Vector2.zero)
         {
-            aminator.SetInteger("MotionState", (int)PlayMotionState.Run);
+            animator.SetInteger("MotionState", (int)PlayMotionState.Run);
         }
         else
         {
-            aminator.SetInteger("MotionState", (int)PlayMotionState.Idle);
+            animator.SetInteger("MotionState", (int)PlayMotionState.Idle);
         }
 
     }
