@@ -8,11 +8,13 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rigidBody;
     private Vector2 moveAmount;
     private Animator animator;
+    private PlayerModel player;
     // Start is called before the first frame update
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        player = GetComponent<PlayerModel>();
     }
 
     // Update is called once per frame
