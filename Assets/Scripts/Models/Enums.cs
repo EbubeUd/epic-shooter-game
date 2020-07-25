@@ -3,3 +3,8 @@
     Idle,
     Run
 }
+public enum WeaponType
+{
+    FireBall,
+    HandSanitizer
+}
