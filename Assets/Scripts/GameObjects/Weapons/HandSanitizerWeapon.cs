@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class HandSanitizerWeapon : MonoBehaviour , IWeapon
 {
-    HandSanitizerWeapon _handSanitizerWeapon = new HandSanitizerWeapon();
     void Start()
     {
         
