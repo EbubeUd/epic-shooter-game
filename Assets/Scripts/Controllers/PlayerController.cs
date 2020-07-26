@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.Interfaces;
+using Assets.Scripts.Management;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,12 +11,16 @@ public class PlayerController : MonoBehaviour
     private Vector2 moveAmount;
     private Animator animator;
     private PlayerModel player;
+    WeaponManager weaponManager;
+    IWeapon currentWeapon;
     // Start is called before the first frame update
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         player = GetComponent<PlayerModel>();
+        weaponManager = WeaponManager._weaponManager;
+        SwitchWeapon(WeaponType.FireBall);
     }
 
     // Update is called once per frame
@@ -33,9 +39,30 @@ public class PlayerController : MonoBehaviour
             animator.SetInteger("MotionState", (int)PlayMotionState.Idle);
         }
 
+        //Switching Weapons
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            currentWeapon.Fire();
+        }
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            SwitchWeapon(WeaponType.FireBall);
+        }
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            SwitchWeapon(WeaponType.HandSanitizer);
+        }
     }
     void FixedUpdate()
     {
         rigidBody.MovePosition(rigidBody.position + moveAmount * Time.fixedDeltaTime);
     }
+
+    #region Method
+    void SwitchWeapon(WeaponType weaponType)
+    {
+        currentWeapon = weaponManager.GetWeapon(weaponType);
+        currentWeapon.Setup();
+    }
+    #endregion
 }
