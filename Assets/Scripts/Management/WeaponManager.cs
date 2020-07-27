@@ -18,7 +18,8 @@ namespace Assets.Scripts.Management
         }
         void Awake()
         {
-            _weaponManager = this;
+            if (_weaponManager == null)
+                _weaponManager = this;
         }
         #region Methods
         public IWeapon GetWeapon(WeaponType weaponType)
