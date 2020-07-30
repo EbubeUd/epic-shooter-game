@@ -5,7 +5,7 @@ namespace Assets.Scripts.Management
 {
     public class WeaponManager : MonoBehaviour
     {
-        public static WeaponManager _weaponManager = new WeaponManager();
+        public static WeaponManager Instance;
         public FireBallWeapon Fireball;
         public HandSanitizerWeapon HandSanitizerWeapon;
         void Start()
@@ -18,8 +18,8 @@ namespace Assets.Scripts.Management
         }
         void Awake()
         {
-            if (_weaponManager == null)
-                _weaponManager = this;
+            if (Instance == null)
+                Instance = this;
         }
         #region Methods
         public IWeapon GetWeapon(WeaponType weaponType)

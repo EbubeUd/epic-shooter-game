@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
         rigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         player = new PlayerModel();
-        weaponManager = WeaponManager._weaponManager;
+        weaponManager = WeaponManager.Instance;
         SwitchWeapon(WeaponType.FireBall);
     }
 
