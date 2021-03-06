@@ -1,8 +1,10 @@
 ﻿using Assets.Scripts.Interfaces;
 using Assets.Scripts.Management;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -21,7 +23,10 @@ public class PlayerController : MonoBehaviour
         player = new PlayerModel();
         weaponManager = WeaponManager.Instance;
         SwitchWeapon(WeaponType.FireBall);
+        
     }
+
+
 
     // Update is called once per frame
     void Update()
@@ -52,6 +57,8 @@ public class PlayerController : MonoBehaviour
         {
             SwitchWeapon(WeaponType.HandSanitizer);
         }
+
+
     }
     void FixedUpdate()
     {

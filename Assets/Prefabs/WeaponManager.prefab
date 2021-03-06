@@ -40,10 +40,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7830276954238549293}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e92399d1c6c9bdf4486028ba539cf58d, type: 3}
+  m_Script: {fileID: 11500000, guid: 0d4e8991083b3984e836579dcfae265b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Fireball: {fileID: 2121461715598665180, guid: d581e2f93addeaf4f92a4097878ad718,
+  Fireball: {fileID: 2121461715598665180, guid: db7b1a8a4b6f14e40bd8ed2edb051762,
     type: 3}
-  HandSanitizerWeapon: {fileID: 8067287572373584678, guid: 67d893eef2dc75b4d8de766f2a808eca,
+  HandSanitizerWeapon: {fileID: 8067287572373584678, guid: 86567148e50c60644adf524be2631482,
     type: 3}
